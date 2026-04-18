@@ -19,62 +19,7 @@
   function loadProducts() {
     let products = JSON.parse(localStorage.getItem('igloo_products'));
     if (!products) {
-      products = [
-        {
-          id: 1,
-          name: 'Água Mineral 500ml',
-          price: 2.0,
-          stock: 10,
-          initialStock: 10,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Water_bottle.png',
-          badge: 'Clássico'
-        },
-        {
-          id: 2,
-          name: 'Refrigerante Lata 350ml',
-          price: 3.0,
-          stock: 8,
-          initialStock: 8,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Diet-Coke-Can.png',
-          badge: 'Clássico'
-        },
-        {
-          id: 3,
-          name: 'Suco Natural 300ml',
-          price: 4.0,
-          stock: 6,
-          initialStock: 6,
-          image: '',
-          badge: 'Natural'
-        },
-        {
-          id: 4,
-          name: 'Chocolate em Barra',
-          price: 4.5,
-          stock: 6,
-          initialStock: 6,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Chocolate_bar.png',
-          badge: 'Mais vendido'
-        },
-        {
-          id: 5,
-          name: 'Iogurte Grego',
-          price: 3.5,
-          stock: 5,
-          initialStock: 5,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Greek_yoghurt_with_honey.jpg/960px-Greek_yoghurt_with_honey.jpg',
-          badge: 'Natural'
-        },
-        {
-          id: 6,
-          name: 'Sanduíche Natural',
-          price: 6.0,
-          stock: 4,
-          initialStock: 4,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Club_sandwich.png/960px-Club_sandwich.png',
-          badge: 'Clássico'
-        }
-      ];
+      products = [{"id":1,"name":"Água Mineral 500ml","price":2,"stock":10,"initialStock":10,"image":"https://www.paodeacucar.com/img/uploads/1/614/32966614.png","badge":"sem gás"},{"id":2,"name":"Coca-Cola Lata 350ml","price":3,"stock":7,"initialStock":8,"image":"https://www.paodeacucar.com/img/uploads/1/59/33000059.png","badge":"Clássico"},{"id":3,"name":"Suco Natural 300ml","price":4,"stock":5,"initialStock":6,"image":"https://static.paodeacucar.com/img/uploads/1/446/33001446.png?im=Resize,width=200","badge":"Natural"},{"id":4,"name":"Wafer ao Leite Kitkat - 41,5g","price":4.5,"stock":6,"initialStock":6,"image":"https://www.paodeacucar.com/img/uploads/1/472/32982472x200x200.png","badge":"Mais vendido"},{"id":5,"name":"Bebida Whey 15g","price":6,"stock":1,"initialStock":5,"image":"https://static.paodeacucar.com/img/uploads/1/469/32963469.png?im=Resize,width=200","badge":"Chocolate Zero Lactose"},{"id":6,"name":"Toddynho","price":3,"stock":4,"initialStock":4,"image":"https://www.paodeacucar.com/img/uploads/1/296/32924296.png","badge":"200ml"},{"id":7,"name":"Paciência","price":1.99,"stock":4,"initialStock":4,"image":"https://m.media-amazon.com/images/I/51wryTNgxbL._UXNaN_FMjpg_QL85_.jpg","badge":"Saco cheio de paciência"}];
       localStorage.setItem('igloo_products', JSON.stringify(products));
     }
     return products;
