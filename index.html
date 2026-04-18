@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I‑gloo – Loja na geladeira</title>
+  <!--
+    Esta página implementa a experiência principal para a lojinha da geladeira.
+    O objetivo é criar um ambiente divertido e acolhedor para os usuários
+    escolherem seus produtos, adicionarem ao carrinho e pagarem tudo em um único PIX.
+    O layout se inspira em micro‑mercados self‑service, com uma paleta quente
+    e elementos arredondados.  Toda a lógica de negócios fica em app.js.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho com marca e ações -->
+  <header class="header">
+    <div class="brand">
+      <!-- Substitui o emoji por um logotipo fornecido pelo usuário -->
+      <img src="logo.png" alt="Logo I‑gloo" class="brand-logo">
+      <div class="brand-text">
+        <h1 class="brand-name">I‑gloo</h1>
+        <p class="brand-tagline">sua loja na geladeira</p>
+      </div>
+    </div>
+    <nav class="actions">
+      <a class="btn btn-soft" href="admin.html" title="Abrir painel administrativo">Painel admin</a>
+      <button id="cart-button" class="btn btn-primary" onclick="toggleCart()">Carrinho <span id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Seção de boas‑vindas -->
+    <section class="hero">
+      <div class="hero-card">
+        <h2 class="hero-title">Olá 👋</h2>
+        <p class="hero-text">Escolha vários itens e pague tudo no mesmo PIX.</p>
+      </div>
+      <div class="hero-illustration">
+        <span class="emoji-stack">🥤🧃🍫</span>
+      </div>
+    </section>
+
+    <!-- Layout principal: lista de produtos e carrinho -->
+    <section class="layout">
+      <div class="product-section">
+        <div class="section-header">
+          <h3>Nossos produtos</h3>
+          <p class="section-subtitle">Escolha seus favoritos</p>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+      <!-- O carrinho aparece sempre, mesmo vazio -->
+      <aside id="cart-card" class="cart-card">
+        <div class="cart-header">
+          <h3>Seu carrinho</h3>
+          <span class="tag">PIX único</span>
+          <button class="btn btn-icon" onclick="toggleCart()" title="Fechar carrinho">✕</button>
+        </div>
+        <div id="cart-list" class="cart-list"></div>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">R$ 0,00</strong></div>
+          <div class="summary-row total-row"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+          <button id="checkout-btn" class="btn btn-primary" onclick="openCheckout()" disabled>Pagar tudo no PIX</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Sobreposição de pagamento -->
+  <div id="payment-overlay" class="overlay hidden">
+    <div class="payment-box">
+      <h3>Pagamento via PIX</h3>
+      <p>Confira seus itens e finalize a compra.</p>
+      <div id="checkout-list" class="checkout-list"></div>
+      <div class="qr-code">
+        <span>QR CODE</span>
+      </div>
+      <div class="summary-row total-row" style="margin-top:1rem">
+        <span>Total</span><strong id="payment-total">R$ 0,00</strong>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeCheckout()">Fechar</button>
+        <button class="btn btn-primary" onclick="confirmPayment()">Confirmar pagamento</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

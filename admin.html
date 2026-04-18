@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel administrativo – I‑gloo</title>
+  <!--
+    Painel administrativo para gerenciar produtos e acompanhar métricas
+    da loja na geladeira. Aqui é possível ajustar preços e estoque,
+    alterar categorias, definir imagens via link e adicionar novos
+    produtos. As estatísticas de faturamento, itens vendidos e
+    estoque total são exibidas apenas neste painel para não poluir
+    a experiência de compra do usuário final.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <!-- Usa o logotipo fornecido também no painel admin -->
+      <img src="logo.png" alt="Logo I‑gloo" class="brand-logo">
+      <div class="brand-text">
+        <h1 class="brand-name">I‑gloo</h1>
+        <p class="brand-tagline">painel admin</p>
+      </div>
+    </div>
+    <nav class="actions">
+      <a class="btn btn-soft" href="index.html">Voltar à loja</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="admin-stats" style="margin-bottom:1.5rem">
+      <div class="stat-card">
+        <div class="label">Faturamento total</div>
+        <div id="admin-revenue" class="value">R$ 0,00</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Itens vendidos</div>
+        <div id="admin-sold" class="value">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Estoque total</div>
+        <div id="admin-stock" class="value">0</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom:0.5rem">Produtos cadastrados</h2>
+      <div class="admin-table-wrapper">
+        <table class="admin-table" id="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Foto</th>
+              <th>Nome</th>
+              <th>Preço (R$)</th>
+              <th>Estoque</th>
+              <th>Badge</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body">
+            <!-- Linhas geradas via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="margin-top:1.5rem">
+      <h2 style="margin-bottom:0.5rem">Adicionar novo produto</h2>
+      <form id="add-product-form" class="admin-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="new-name">Nome</label>
+            <input type="text" id="new-name" required>
+          </div>
+          <div class="form-group">
+            <label for="new-price">Preço (R$)</label>
+            <input type="number" id="new-price" step="0.01" min="0" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="new-stock">Estoque inicial</label>
+            <input type="number" id="new-stock" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="new-badge">Badge</label>
+            <input type="text" id="new-badge" placeholder="Ex.: Clássico, Natural">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="new-image">URL da foto</label>
+          <input type="url" id="new-image" placeholder="https://...">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:0.8rem">Adicionar produto</button>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
