@@ -16,69 +16,69 @@
    * URL da imagem e um badge opcional para destacar categorias.
    * @returns {Array} lista de produtos
    */
-  function loadProducts() {
-    let products = JSON.parse(localStorage.getItem('igloo_products'));
-    if (!products) {
-      products = [
-        {
-          id: 1,
-          name: 'Água Mineral 500ml',
-          price: 2.0,
-          stock: 10,
-          initialStock: 10,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Water_bottle.png',
-          badge: 'Clássico'
-        },
-        {
-          id: 2,
-          name: 'Refrigerante Lata 350ml',
-          price: 3.0,
-          stock: 8,
-          initialStock: 8,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Diet-Coke-Can.png',
-          badge: 'Clássico'
-        },
-        {
-          id: 3,
-          name: 'Suco Natural 300ml',
-          price: 4.0,
-          stock: 6,
-          initialStock: 6,
-          image: '',
-          badge: 'Natural'
-        },
-        {
-          id: 4,
-          name: 'Chocolate em Barra',
-          price: 4.5,
-          stock: 6,
-          initialStock: 6,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Chocolate_bar.png',
-          badge: 'Mais vendido'
-        },
-        {
-          id: 5,
-          name: 'Iogurte Grego',
-          price: 3.5,
-          stock: 5,
-          initialStock: 5,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Greek_yoghurt_with_honey.jpg/960px-Greek_yoghurt_with_honey.jpg',
-          badge: 'Natural'
-        },
-        {
-          id: 6,
-          name: 'Sanduíche Natural',
-          price: 6.0,
-          stock: 4,
-          initialStock: 4,
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Club_sandwich.png/960px-Club_sandwich.png',
-          badge: 'Clássico'
-        }
-      ];
-      localStorage.setItem('igloo_products', JSON.stringify(products));
-    }
-    return products;
+function loadProducts() {
+  let products = JSON.parse(localStorage.getItem('igloo_products'));
+  if (!products) {
+    products = [
+      {
+        id: 1,
+        name: 'Água Mineral 500ml',
+        price: 2,
+        stock: 12,
+        initialStock: 12,
+        image: 'https://m.media-amazon.com/images/I/51UpHMSHUNL.jpg',
+        badge: 'Clássico'
+      },
+      {
+        id: 3,
+        name: 'Suco Natural 300ml',
+        price: 7,
+        stock: 5,
+        initialStock: 5,
+        image: 'https://static.paodeacucar.com/img/uploads/1/444/33001444.png',
+        badge: 'Natural'
+      },
+      {
+        id: 4,
+        name: 'Chocolate em Barra',
+        price: 4.5,
+        stock: 6,
+        initialStock: 6,
+        image: '',
+        badge: 'Mais vendido'
+      },
+      {
+        id: 5,
+        name: 'Iogurte Grego',
+        price: 3.5,
+        stock: 4,
+        initialStock: 4,
+        image: '',
+        badge: 'Natural'
+      },
+      {
+        id: 6,
+        name: 'Sanduíche Natural',
+        price: 6,
+        stock: 3,
+        initialStock: 3,
+        image: '',
+        badge: 'Clássico'
+      },
+      {
+        id: 7,
+        name: 'Coca-Cola Lata 350ml',
+        price: 4.99,
+        stock: 5,
+        initialStock: 5,
+        image: 'https://static.paodeacucar.com/img/uploads/1/59/33000059.png',
+        badge: 'Clássico'
+      }
+    ];
+    localStorage.setItem('igloo_products', JSON.stringify(products));
   }
+  return products;
+}
 
   /**
    * Salva a lista de produtos no localStorage.
